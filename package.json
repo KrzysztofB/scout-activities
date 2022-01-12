@@ -1,0 +1,22 @@
+{
+  "name": "scout-activities",
+  "version": "1.0.0",
+  "description": "Record scout teams activities",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KrzysztofB/scout-activities.git"
+  },
+  "author": "Krzysztof Bardzinski",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/KrzysztofB/scout-activities/issues"
+  },
+  "homepage": "https://github.com/KrzysztofB/scout-activities#readme",
+  "dependencies": {
+    "bootstrap": "^5.1.3"
+  }
+}
