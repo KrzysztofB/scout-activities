@@ -1,0 +1,33 @@
+body {
+    background-color: #126FB6;
+    color: whitesmoke;
+    font-weight: bold;
+
+}
+
+
+.form-control {
+    background-color: transparent;
+    color: whitesmoke;
+
+}
+
+.form-select {
+    background-color: transparent;
+    color: whitesmoke;
+
+}
+
+.form-control:focus {
+    background-color: #126FB6;
+    color: white;
+
+}
+
+.form-select:focus {
+    background-color: #126FB6;
+    color: white;
+
+}
+
+
