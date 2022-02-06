@@ -65,9 +65,14 @@
                 <option value="wloclawek">Włocławek</option>
             </select>
             <!-- div id="scoutunitHelp" class="form-text">Wybierz Hufiec dla którego zdobywasz punkty</div -->
-
         </div>
 
+        <div class="mb-5">
+            <label for="participantsCtl" class="form-label">Liczba uczestników</label>
+            <input type="number" class="form-control" name="participants" id="participantsCtl" autocomplete="off" required
+                value="1">
+        </div>
+        
         <div class="mb-5">
             <label for="walkingCtl" class="form-label">Aktywność</label>
             <div>
@@ -89,6 +94,7 @@
             </div>
         </div>
 
+
         <div class="mb-5">
             <label for="distanceCtl" class="form-label">Dystans [m]</label>
             <input type="number" class="form-control" name="distance" id="distanceCtl" autocomplete="off" required
@@ -96,11 +102,13 @@
         </div>
 
         <div class="mb-5">
-            <label for="participantsCtl" class="form-label">Liczba uczestników</label>
-            <input type="number" class="form-control" name="participants" id="participantsCtl" autocomplete="off" required
-                value="1">
+            <label for="imageCtl" class="form-label">Zdjęcie dystansu</label>
+            <input type="file" class="form-control" name="image" id="imageCtl" autocomplete="off" required>
+            <div id="imagePreview">
+                <img src="" alt="Podgląd zdjęcia" class="image-preview__image">
+                <span class="image-preview__default-text">Podgląd zdjęcia</span>
+            </div>
         </div>
-
 
         <button type="submit" class="btn btn-light mb-5">Wyślij</button>
     </form>
@@ -110,7 +118,32 @@
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
 
-    <script src="" async defer>
+    <script>
+        const inpFile = document.getElementById("imageCtl");
+        const prewiewContainer = document.getElementById("imagePreview");
+        const previewImage = prewiewContainer.querySelector(".image-preview__image");
+        const previewDefaultText = prewiewContainer.querySelector(".image-preview__default-text");
+
+        inpFile.addEventListener("change", function(){
+            const file = this.files[0];
+
+            if (file) {
+                const reader = new FileReader();
+                
+                previewDefaultText.style.display = "none";
+                previewImage.style.display = "block";
+
+                reader.addEventListener("load", function(){
+                    previewImage.setAttribute("src", this.result);
+                });
+
+                reader.readAsDataURL(file);
+            } else {
+                previewDefaultText.style.display = null;
+                previewImage.style.display = null;
+                previewImage.setAttribute("src", "");
+            }
+        });
 
     </script>
 </body>
