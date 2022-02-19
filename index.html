@@ -39,7 +39,7 @@
             <label for="scoutunitCtl" class="form-label">Hufiec</label>
 
             <select class="form-select  mb-3" required id="scoutunitCtl" name="scoutunit"
-                aria-label=".form-select-lg example" aria-placeholder="wubierz z listy"
+                aria-label=".form-select-lg example" aria-placeholder="wybierz z listy"
                 aria-describedby="scoutunitHelp">
                 <option value="">-- wybierz z listy --</option>
                 <option value="aleksandrowkujawski">Aleksandrów Kujawski</option>
@@ -72,7 +72,7 @@
             <input type="number" class="form-control" name="participants" id="participantsCtl" autocomplete="off" required
                 value="1">
         </div>
-        
+
         <div class="mb-5">
             <label for="walkingCtl" class="form-label">Aktywność</label>
             <div>
@@ -119,6 +119,7 @@
         crossorigin="anonymous"></script>
 
     <script>
+        /* image preview taken from dcode channel  https://www.youtube.com/watch?v=VElnT8EoEEM */
         const inpFile = document.getElementById("imageCtl");
         const prewiewContainer = document.getElementById("imagePreview");
         const previewImage = prewiewContainer.querySelector(".image-preview__image");
