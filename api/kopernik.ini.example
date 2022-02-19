@@ -3,6 +3,5 @@
 ; Comments start with ';', as in php.ini
 
 [first_section]
-one = 1
-five = 5
-animal = BIRD
+service_email = user@host
+service_email_subject = subject to filter service_email_subject

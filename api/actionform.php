@@ -1,12 +1,13 @@
 <?php
 namespace Zhp\KujPom\Naorbitach;
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
 require  __DIR__ . '/sanitization.php';
 require  __DIR__ . '/dictkujpom.php';
 
 $kopernik_config = parse_ini_file('kopernik.ini');
-
-var_dump($kopernik_config);
 
 
 function redirect_to_index()
@@ -21,12 +22,20 @@ function clean_field($input)
 }
 
 
+// $inputs = [
+//     'scoutunit' => 'chelmza',
+//     'participants' => '4',
+//     'activity' => 'running',
+//     'distance' => '23443',
+//     'image' => 'file',
+//     'notes' => 'my notes'
+// ];
 $inputs = [
-    'scoutunit' => 'chelmza',
-    'participants' => '4',
-    'activity' => 'running',
-    'distance' => '23443',
-    'image' => 'file',
+    'scoutunit' => $_POST['scoutunit'],
+    'participants' => $_POST['participants'],
+    'activity' => $_POST['activity'],
+    'distance' => $_POST['distance'],
+    'image' => $_POST['image'],
     'notes' => 'my notes'
 ];
 
@@ -35,7 +44,7 @@ $fields = [
     'participants' => 'intvalidate',
     'activity' => 'string',
     'distance' => 'intvalidate',
-    'image' => 'file',
+    'image' => 'string',
     'notes' => 'string'
 ];
 
@@ -71,7 +80,3 @@ if($errors)
 
  
 var_dump($data);
-
-$a1 = filter_var('-1234565', FILTER_VALIDATE_INT);
-//print("\n");
-var_dump($a1);

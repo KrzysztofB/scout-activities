@@ -1,0 +1,44 @@
+DONE:
+- string sanitizing
+- number validation
+- dictionary validation
+
+TODO:
+check .ini is hidden
+send email
+
+
+WYMAGANIA
+wyślij wymaga wypełnienia wszystkich pól (prócz notatki)
+(może by wczeniej zablokowany lub niewidoczny)
+
+cookie/browser data Hufiec=xxx i Aktywność= yyy
+by nie trzeba było wprowadzać 
+
+Nagłówek dla FB
+
+
+allowed files
+- *.jpg *.png
+- max file size 10MB?
+
+Generate 
+- API KEY
+- Token
+
+OneDrive
+Dokumenty/2022naorbitach
+- - - - - - - - 
+https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app
+// https://github.com/lovattj/php-skydrive
+
+
+Register app in https://portal.azure.com/#home
+
+- - --- - 
+email attachment to OneDrive
+subject contains NaOrbitachSpecjalnosci 2022
+
+
+TODO
+- 
