@@ -1,3 +1,5 @@
+api/kopernik.ini
+
 # ignore everything in the root except the "wp-content" directory.
 !wp-content/
 

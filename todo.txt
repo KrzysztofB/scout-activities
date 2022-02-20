@@ -1,11 +1,15 @@
 DONE:
-- string sanitizing
-- number validation
-- dictionary validation
+string sanitizing
+number validation
+dictionary validation
+check .ini is hidden
 
 TODO:
-check .ini is hidden
-send email
+read ini
+check Polish characters are processed properly
+send email?????
+send attachment
+update email subject 
 
 
 WYMAGANIA

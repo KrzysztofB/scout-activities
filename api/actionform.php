@@ -78,5 +78,20 @@ if($errors)
     return;
 }
 
+$mail_to = $kopernik_config['service_email'];
+$mail_subject = $kopernik_config['service_email_subject'];
+$mail_from =  $kopernik_config['service_email_from'];
+$mail_body = "";
+foreach($data as $key=>$value)
+{
+    $mail_body .= $key . '=' . $value . '\r\n';
+}
+
+var_dump($mail_body);
+
+var_dump($mail_subject);
+$mail_headers[] = 'From: ' . $mail_from;
+mail($mail_to, $mail_subject, $mail_body,implode("\r\n", $mail_headers));
+
  
 var_dump($data);
