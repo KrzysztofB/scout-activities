@@ -87,11 +87,11 @@ foreach($data as $key=>$value)
     $mail_body .= $key . '=' . $value . '\r\n';
 }
 
-var_dump($mail_body);
+//var_dump($mail_body);
 
-var_dump($mail_subject);
+//var_dump($mail_subject);
 $mail_headers[] = 'From: ' . $mail_from;
-mail($mail_to, $mail_subject, $mail_body,implode("\r\n", $mail_headers));
-
+$mail_accepted = mail($mail_to, $mail_subject, $mail_body,implode("\r\n", $mail_headers));
+var_dump($mail_accepted);
  
-var_dump($data);
+//var_dump($data);
