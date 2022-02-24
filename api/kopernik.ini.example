@@ -3,6 +3,13 @@
 ; Comments start with ';', as in php.ini
 
 [first_section]
-service_email = recipient@host
-service_email_subject = subject to filter service_email_subject
-service_email_from = Sender <sender@host>
+service_email = email_to@destination_host
+service_email_subject = Email Subject
+service_email_from = email_from@source_host
+service_email_from_name = Readable Sender Name
+
+service_smtp_server = smtp.host.yyy
+service_smtp_port = 587
+service_smtp_encryption = tls
+service_smtp_user = my_smtp_login
+service_smtp_password = 'my smtp password'

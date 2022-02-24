@@ -3,12 +3,17 @@ string sanitizing
 number validation
 dictionary validation
 check .ini is hidden
+read ini
+send email
+send attachment
 
 TODO:
-read ini
+create database tables
+save data to database
+display chart page
+api to retrieve charts data
+captcha
 check Polish characters are processed properly
-send email?????
-send attachment
 update email subject 
 
 
