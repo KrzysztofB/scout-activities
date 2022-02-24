@@ -9,9 +9,13 @@ require '../vendor/phpmailer/phpmailer/src/Exception.php';
 require '../vendor/phpmailer/phpmailer/src/PHPMailer.php';
 require '../vendor/phpmailer/phpmailer/src/SMTP.php';
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+$full_debug = false;
+
+if ($full_debug) {
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
+}
 
 require  __DIR__ . '/sanitization.php';
 require  __DIR__ . '/dictkujpom.php';
@@ -137,6 +141,8 @@ foreach($data as $key=>$value)
 {
     $mail_body .= $key . '=' . $value . PHP_EOL;
 }
+$mail_body .= 'image_old' . '=' . $uploaded_image_name_old . PHP_EOL;
+
 
 //var_dump($mail_body);
 // Send by PHP mail function
@@ -150,7 +156,9 @@ $mail = new PHPMailer(true);
 
 try {
     //Server settings
-    $mail->SMTPDebug = SMTP::DEBUG_SERVER;                              //Enable verbose debug output
+    if ($full_debug) {
+        $mail->SMTPDebug = SMTP::DEBUG_SERVER;                              //Enable verbose debug output
+    }
     $mail->isSMTP();                                                    //Send using SMTP
     $mail->Host       = $kopernik_config['service_smtp_server'];        //Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                           //Enable SMTP authentication
