@@ -34,7 +34,7 @@
         </header>
     </section>
     </section>
-    <form action="api/actionform.php" method="post" class="mx-3">
+    <form action="api/actionform.php" method="post" enctype="multipart/form-data" class="mx-3">
         <div class="mb-5">
             <label for="scoutunitCtl" class="form-label">Hufiec</label>
 
@@ -102,8 +102,9 @@
         </div>
 
         <div class="mb-5">
-            <label for="imageCtl" class="form-label">Zdjęcie dystansu</label>
-            <input type="file" class="form-control" name="image" id="imageCtl" autocomplete="off" required>
+            <label for="imageCtl" class="form-label">Zdjęcie dystansu (możesz wcześniej przyciąć nieistotne brzegi - szybciej się zapisze)</label>
+            <input type="hidden" name="MAX_FILE_SIZE" value="8000000" />
+            <input type="file" class="form-control" name="image" id="imageCtl" autocomplete="off" required accept="image/png, image/jpeg, image/*" capture="environment">
             <div id="imagePreview">
                 <img src="" alt="Podgląd zdjęcia" class="image-preview__image">
                 <span class="image-preview__default-text">Podgląd zdjęcia</span>
