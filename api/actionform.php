@@ -19,6 +19,8 @@ if ($full_debug) {
 
 require  __DIR__ . '/sanitization.php';
 require  __DIR__ . '/dictkujpom.php';
+require  __DIR__ . '/actionsave.php';
+
 
 $kopernik_config = parse_ini_file('kopernik.ini');
 
@@ -131,6 +133,23 @@ if($errors)
 }
 
 
+$mysqli = kopernik_mysqli($kopernik_config, $full_debug);
+
+$action_saved = false;
+if($mysqli->connect_errno == 0)
+{
+    $err = save_action($mysqli, $data);
+
+    if (!$err) {
+        $action_saved = true;
+    }
+} else {
+    // if (mysqli_connect_errno()) {
+    //     throw new RuntimeException('mysqli connection error: ' . mysqli_connect_error());
+    // }
+}
+
+
 $mail_to = $kopernik_config['service_email'];
 $mail_subject = $kopernik_config['service_email_subject'];
 $mail_from =  $kopernik_config['service_email_from'];
@@ -142,7 +161,13 @@ foreach($data as $key=>$value)
     $mail_body .= $key . '=' . $value . PHP_EOL;
 }
 $mail_body .= 'image_old' . '=' . $uploaded_image_name_old . PHP_EOL;
+if($action_saved)
+{
+    $mail_body .= 'action_saved' . '=' . 'true' . PHP_EOL;
+} else {
+    $mail_body .= 'action_saved' . '=' . 'false' . PHP_EOL;
 
+}
 
 //var_dump($mail_body);
 // Send by PHP mail function
@@ -190,4 +215,8 @@ try {
 } catch (Exception $e) {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }
+
+
+$mysqli->close();
+
 cleanup();

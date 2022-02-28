@@ -7,8 +7,8 @@ CREATE TABLE `4362_appkopernik`.`activities` (
     `activity` VARCHAR(20) NOT NULL , 
     `participants` SMALLINT NOT NULL DEFAULT '1' , 
     `distance` BIGINT NOT NULL DEFAULT '0' , 
-    `created_at` TIMESTAMP NOT NULL , 
-    `updated_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP , 
+    `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP  , 
+    `updated_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, 
     `valid` BOOLEAN NULL DEFAULT NULL , 
     `image_name` VARCHAR(160) NULL , 
     `image_name_new` VARCHAR(160) NULL , 
@@ -23,7 +23,7 @@ CREATE TABLE `4362_appkopernik`.`totals` (
     `running` BIGINT NOT NULL DEFAULT '0', 
     `cycling` BIGINT NOT NULL DEFAULT '0', 
     `swimming` BIGINT NOT NULL DEFAULT '0', 
-    `updated_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP , 
+    `updated_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAM, 
 PRIMARY KEY (`scoutunit`)) ENGINE = InnoDB;
 
 INSERT INTO `totals`(`scoutunit`) VALUES ('aleksandrowkujawski');

@@ -13,3 +13,10 @@ service_smtp_port = 587
 service_smtp_encryption = tls
 service_smtp_user = my_smtp_login
 service_smtp_password = 'my smtp password'
+
+mysqli_host = 
+mysqli_user = 
+mysqli_pw = 
+mysqli_db = 
+mysqli_port = 
+mysqli_socket = 
