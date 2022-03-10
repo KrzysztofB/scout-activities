@@ -51,6 +51,9 @@ INSERT INTO `totals`(`scoutunit`) VALUES ('torun');
 INSERT INTO `totals`(`scoutunit`) VALUES ('tuchola');
 
 INSERT INTO `totals`(`scoutunit`) VALUES ('wloclawek');
+INSERT INTO `totals`(`scoutunit`) VALUES ('komendachoragwi');
+INSERT INTO `totals`(`scoutunit`) VALUES ('test');
+
 
 
 delimiter //
