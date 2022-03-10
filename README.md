@@ -2,6 +2,7 @@
 Record scout activities and display team stats
 
 How it works
+
 form page
 - user submits form
 - form data is validated
@@ -14,6 +15,8 @@ results page
 - stats are retrieved from server
 - and displayed in bar chart
 
+TODO:
+- error handling
 
 
 DEV NOTES:
