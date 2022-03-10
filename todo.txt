@@ -10,10 +10,11 @@ send attachment
 create database tables
 save data to database
 api to retrieve charts data
+display chart page
+hide/lock submit button to avoid doubled submission
 
 TODO:
 API - return descriptive scout unit
-display chart page
 captcha
 check Polish characters are processed properly
 update email subject 

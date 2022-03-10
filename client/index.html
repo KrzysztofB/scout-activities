@@ -18,13 +18,26 @@
 </head>
 
 <body>
+<script>
+    function sendingIndicator(){
+        const btnSubmit = document.getElementById("btnSubmit");
+        btnSubmit.style.display = "none";
+        const panelProgress = document.getElementById("panelProgress");
+        panelProgress.style.display = "block";
+        return true; 
+    }
+</script>
+
     <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
     <!-- Header -->
     <header id="header">
-       <a class="logo" href="../index.html">strona chorągwi</a>
+        <nav class="navbar navbar-dark bg-dark">
+                <span class="nav-item active"><a href="https://kp.zhp.pl/" class="nav-link">strona chorągwi</a></span>
+                <span class="nav-item active"><a href="result.html" class="nav-link">wyniki</a></span>
+        </nav>
     </header>
 
     <section class="mb-5">
@@ -34,7 +47,9 @@
         </header>
     </section>
     <section>
-    <form action="api/actionform.php" method="post" enctype="multipart/form-data" class="mx-3">
+    <form action="api/actionform.php" method="post" enctype="multipart/form-data" class="mx-3"
+    onsubmit="sendingIndicator()"
+    >
         <div class="mb-5">
             <label for="scoutunitCtl" class="form-label">Hufiec</label>
 
@@ -109,14 +124,18 @@
         <div class="mb-5">
             <label for="imageCtl" class="form-label">Zdjęcie dystansu (możesz wcześniej przyciąć nieistotne brzegi - szybciej się zapisze)</label>
             <input type="hidden" name="MAX_FILE_SIZE" value="8000000" />
-            <input type="file" class="form-control" name="image" id="imageCtl" autocomplete="off" required accept="image/png, image/jpeg, image/*" capture="environment">
+            <input type="file" class="form-control" name="image" id="imageCtl" autocomplete="off" required 
+                accept="image/png, image/jpeg, image/*" capture="environment">
             <div id="imagePreview">
                 <img src="" alt="Podgląd zdjęcia" class="image-preview__image">
                 <span class="image-preview__default-text">Podgląd zdjęcia</span>
             </div>
         </div>
 
-        <button type="submit" class="btn btn-light mb-5">Wyślij</button>
+        <button type="submit" class="btn btn-light mb-5" name="btnSubmit" id="btnSubmit">
+            Wyślij
+        </button>
+        <p id="panelProgress" style="display: none;"> <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Trwa wysyłanie...</p>
     </form>
     </section>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"

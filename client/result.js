@@ -9,7 +9,7 @@ function BarChart(data, {
     marginRight = 0, // the right margin, in pixels
     marginBottom = 10, // the bottom margin, in pixels
     marginLeft = 50, // the left margin, in pixels
-    width = 640, // the outer width of the chart, in pixels
+    width = 600, // the outer width of the chart, in pixels
     height, // outer height, in pixels
     xType = d3.scaleLinear, // type of x-scale
     xDomain, // [xmin, xmax]

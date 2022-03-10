@@ -56,6 +56,11 @@ function redirect_to_index()
     cleanup();
     header('Location: ../index.html');
 }
+function redirect_to_result()
+{   
+    cleanup();
+    header('Location: ../result.html');
+}
 
 function clean_field($input)
 {
@@ -128,10 +133,11 @@ if($uploaded_image_size==0 || $uploaded_image_size>8000000 || !$uploaded_image_n
 
 if($errors)
 {
-    //redirect_to_index();
+    redirect_to_result();
     return;
 }
 
+redirect_to_result();
 
 $mysqli = kopernik_mysqli($kopernik_config, $full_debug);
 

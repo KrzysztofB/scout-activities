@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="index.css">
     <script src="https://d3js.org/d3.v6.js"></script>
     <script src="result.js"></script>
+    <script src="kopernikapi.js"></script>
 
 </head>
 
@@ -25,14 +26,17 @@
         <![endif]-->
 
     <!-- Header -->
-    <header id="header">
-       <a class="logo" href="../index.html">strona chorągwi</a>
+    <header id="header">        
+        <nav class="navbar navbar-dark bg-dark">
+            <span class="nav-item active"><a href="https://kp.zhp.pl/" class="nav-link">strona chorągwi</a></span>
+            <span class="nav-item active"><a href="index.html" class="nav-link">formularz</a></span>
+        </nav>
     </header>
 
     <section class="mb-5">
         <header class="mx-5">
             <h2 class="d-flex justify-content-center">Na orbitach specjalności</h2>
-            <p class = "d-flex justify-content-center">Tymczasowe wyniki</p>
+            <p class = "d-flex justify-content-center">Wypracowane wyniki</p>
         </header>
     </section>
     <section>
@@ -47,20 +51,36 @@
                 item.totalKm = (item.cycling + item.running + item.swimming + item.walking)/1000.0;
                 return item;
             }
-            const data = {"totals":[{"scoutunit":"aleksandrowkujawski","walking":"0","running":"0","cycling":"0","swimming":"0","updated_at":"2022-02-26 02:39:13"},{"scoutunit":"brodnica","walking":"0","running":"0","cycling":"0","swimming":"0","updated_at":"2022-02-26 02:41:19"},{"scoutunit":"bydgoszczmiasto","walking":"0","running":"4690","cycling":"0","swimming":"0","updated_at":"2022-02-26 02:41:19"},{"scoutunit":"chelmza","walking":"0","running":"750","cycling":"0","swimming":"0","updated_at":"2022-02-26 02:41:19"},{"scoutunit":"chojnice","walking":"0","running":"0","cycling":"0","swimming":"1203","updated_at":"2022-03-01 00:36:02"},{"scoutunit":"golubdobrzyn","walking":"0","running":"0","cycling":"0","swimming":"0","updated_at":"2022-02-26 02:41:19"},{"scoutunit":"grudziadz","walking":"12570","running":"0","cycling":"340848","swimming":"0","updated_at":"2022-02-26 02:41:19"},{"scoutunit":"inowroclaw","walking":"0","running":"0","cycling":"0","swimming":"0","updated_at":"2022-02-26 02:41:19"},{"scoutunit":"jablonowopomorskie","walking":"0","running":"0","cycling":"0","swimming":"0","updated_at":"2022-02-26 02:41:19"},{"scoutunit":"koronowo","walking":"0","running":"0","cycling":"0","swimming":"0","updated_at":"2022-02-26 02:41:19"},{"scoutunit":"mogilno","walking":"0","running":"0","cycling":"0","swimming":"0","updated_at":"2022-02-26 02:41:19"},{"scoutunit":"naklonadnotecia","walking":"0","running":"0","cycling":"0","swimming":"0","updated_at":"2022-02-26 02:41:19"},{"scoutunit":"nowemiastolubawskie","walking":"0","running":"0","cycling":"0","swimming":"0","updated_at":"2022-02-26 02:41:19"},{"scoutunit":"paluki","walking":"0","running":"0","cycling":"0","swimming":"0","updated_at":"2022-02-26 02:41:19"},{"scoutunit":"powiatwloclawski","walking":"0","running":"0","cycling":"0","swimming":"0","updated_at":"2022-02-26 02:41:19"},{"scoutunit":"rypin","walking":"0","running":"0","cycling":"0","swimming":"0","updated_at":"2022-02-26 02:41:19"},{"scoutunit":"soleckujawski","walking":"0","running":"0","cycling":"0","swimming":"0","updated_at":"2022-02-26 02:41:19"},{"scoutunit":"swiecie","walking":"0","running":"0","cycling":"0","swimming":"0","updated_at":"2022-02-26 02:41:19"},{"scoutunit":"torun","walking":"0","running":"0","cycling":"0","swimming":"0","updated_at":"2022-02-26 02:41:19"},{"scoutunit":"tuchola","walking":"0","running":"0","cycling":"0","swimming":"60","updated_at":"2022-02-26 02:41:19"},{"scoutunit":"wloclawek","walking":"0","running":"0","cycling":"0","swimming":"0","updated_at":"2022-02-26 02:41:19"}]};
-            const dataWithTotalKm = data.totals.map( withTotalKm )
 
-            const chart = BarChart(dataWithTotalKm, {
-                x: d => d.totalKm,
-                y: d => d.scoutunit,
-                yDomain: d3.groupSort(dataWithTotalKm, ([d]) => -d.totalKm, d => d.scoutunit), // sort by descending totalKm
-                xFormat: ".2f",
-                xLabel: "Dystans[km] →",
-                marginLeft: 120
-            })
+            function showResults(data){
+                //const data = {"totals":[{"scoutunit":"aleksandrowkujawski","walking":"0","running":"0","cycling":"0","swimming":"0","updated_at":"2022-02-26 02:39:13"},{"scoutunit":"brodnica","walking":"0","running":"0","cycling":"0","swimming":"0","updated_at":"2022-02-26 02:41:19"},{"scoutunit":"bydgoszczmiasto","walking":"0","running":"4690","cycling":"0","swimming":"0","updated_at":"2022-02-26 02:41:19"},{"scoutunit":"chelmza","walking":"0","running":"750","cycling":"0","swimming":"0","updated_at":"2022-02-26 02:41:19"},{"scoutunit":"chojnice","walking":"0","running":"0","cycling":"0","swimming":"1203","updated_at":"2022-03-01 00:36:02"},{"scoutunit":"golubdobrzyn","walking":"0","running":"0","cycling":"0","swimming":"0","updated_at":"2022-02-26 02:41:19"},{"scoutunit":"grudziadz","walking":"12570","running":"0","cycling":"340848","swimming":"0","updated_at":"2022-02-26 02:41:19"},{"scoutunit":"inowroclaw","walking":"0","running":"0","cycling":"0","swimming":"0","updated_at":"2022-02-26 02:41:19"},{"scoutunit":"jablonowopomorskie","walking":"0","running":"0","cycling":"0","swimming":"0","updated_at":"2022-02-26 02:41:19"},{"scoutunit":"koronowo","walking":"0","running":"0","cycling":"0","swimming":"0","updated_at":"2022-02-26 02:41:19"},{"scoutunit":"mogilno","walking":"0","running":"0","cycling":"0","swimming":"0","updated_at":"2022-02-26 02:41:19"},{"scoutunit":"naklonadnotecia","walking":"0","running":"0","cycling":"0","swimming":"0","updated_at":"2022-02-26 02:41:19"},{"scoutunit":"nowemiastolubawskie","walking":"0","running":"0","cycling":"0","swimming":"0","updated_at":"2022-02-26 02:41:19"},{"scoutunit":"paluki","walking":"0","running":"0","cycling":"0","swimming":"0","updated_at":"2022-02-26 02:41:19"},{"scoutunit":"powiatwloclawski","walking":"0","running":"0","cycling":"0","swimming":"0","updated_at":"2022-02-26 02:41:19"},{"scoutunit":"rypin","walking":"0","running":"0","cycling":"0","swimming":"0","updated_at":"2022-02-26 02:41:19"},{"scoutunit":"soleckujawski","walking":"0","running":"0","cycling":"0","swimming":"0","updated_at":"2022-02-26 02:41:19"},{"scoutunit":"swiecie","walking":"0","running":"0","cycling":"0","swimming":"0","updated_at":"2022-02-26 02:41:19"},{"scoutunit":"torun","walking":"0","running":"0","cycling":"0","swimming":"0","updated_at":"2022-02-26 02:41:19"},{"scoutunit":"tuchola","walking":"0","running":"0","cycling":"0","swimming":"60","updated_at":"2022-02-26 02:41:19"},{"scoutunit":"wloclawek","walking":"0","running":"0","cycling":"0","swimming":"0","updated_at":"2022-02-26 02:41:19"}]};
+                const dataWithTotalKm = data.totals.map( withTotalKm )
 
-            var element = document.getElementById("dataDisplay");
-            element.appendChild(chart);
+                const chart = BarChart(dataWithTotalKm, {
+                    x: d => d.totalKm,
+                    y: d => d.scoutunit,
+                    yDomain: d3.groupSort(dataWithTotalKm, ([d]) => -d.totalKm, d => d.scoutunit), // sort by descending totalKm
+                    xFormat: ".2f",
+                    xLabel: "Dystans[km] →",
+                    marginLeft: 120
+                })
+
+                const element = document.getElementById("dataDisplay");
+                while (element.firstChild) {
+                    element.removeChild(element.firstChild);
+                }
+                element.appendChild(chart);
+            }
+
+            FetchKopernikAPI.getResults().then(
+            (data) => showResults(data)
+        ).catch(
+            (error) =>console.error( error )
+        ).finally(
+           //nothing
+        )
+
+           
         </script>
 </body>
 
