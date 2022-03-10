@@ -24,7 +24,9 @@ function scoutunit_dict(): array
     'swiecie' => 'Świecie - powiat',
     'torun' => 'Toruń',
     'tuchola' => 'Tuchola',
-    'wloclawek' => 'Włocławek'
+    'wloclawek' => 'Włocławek',
+    'komendachoragwi' => 'komenda chorągwi',
+    'test' => '*test*'
     ];
 }
 
