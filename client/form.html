@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Na Orbitach Specjalności - Propozycja Programowa Chorągwi
+      Kujawsko-Pomorskiej
+    </title>
+    <meta name="keywords" content="kopernik, zhp, kpzhp, kilometry" />
+
+    <link rel="stylesheet" href="CSS/form.css" type="text/css"/>
+  </head>
+  <body>
+    <script>
+      function sendingIndicator(){
+          const btnSubmit = document.getElementById("btnSubmit");
+          btnSubmit.style.display = "none";
+          const panelProgress = document.getElementById("panelProgress");
+          panelProgress.style.display = "block";
+          return true; 
+      }
+  </script>
+
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+    <section id="background">
+      <div id="backgroung_photo"></div>
+      <div id="backgroung_mask"></div>
+      <svg width="100%" height="100%" class="circle">
+        <circle
+          cx="100%"
+          cy="30%"
+          r="84.3%"
+          fill="black"
+          style="opacity: 20%"
+          class="circle"
+        />
+        <circle cx="100%" cy="30%" r="84%" fill="white" class="circle" />
+      </svg>
+    </section>
+    
+    <!-- Header -->
+    <header>
+      <nav>
+      <a href="index.html"><button type="button" id="btn-1">NA ORBITACH SPECJALNOŚCI</button></a>
+    </nav>
+    </header>
+    <main class="mainwrap"> 
+      <aside>
+        <img id="img_cover" src="img/form-background.png" alt="harcerka" />
+      </aside>
+      <form action="api/actionform.php" method="post" enctype="multipart/form-data"
+      onsubmit="sendingIndicator()"
+      id="form_acticities"
+    >
+  
+      <div>
+      <label class="form-label" for="scoutunitCtl">HUFIEC</label>
+      <select class="key-input" required id="scoutunitCtl" name="scoutunit"
+      aria-label=".form-select-lg example" aria-placeholder="wybierz z listy"
+      aria-describedby="scoutunitHelp">
+      <option value="">&mdash; wybierz z listy &mdash;</option>
+
+      <option value="aleksandrowkujawski">Aleksandrów Kujawski</option>
+      <option value="brodnica">Brodnica</option>
+      <option value="bydgoszczmiasto">Bydgoszcz-miasto</option>
+      <option value="chelmza">Chełmża</option>
+      <option value="chojnice">Chojnice</option>
+
+      <option value="golubdobrzyn">Golub-Dobrzyń</option>
+      <option value="grudziadz">Grudziądz</option>
+      <option value="inowroclaw">Inowrocław</option>
+      <option value="jablonowopomorskie">Jabłonowo Pomorskie</option>
+      <option value="koronowo">Koronowo</option>
+      
+      <option value="mogilno">Mogilno</option>
+      <option value="naklonadnotecia">Nakło nad Notecią</option>
+      <option value="nowemiastolubawskie">Nowe Miasto Lubawskie</option>
+      <option value="paluki">Pałuki</option>
+      <option value="powiatwloclawski">Powiat Włocławski</option>
+      
+      <option value="rypin">Rypin</option>
+      <option value="soleckujawski">Solec Kujawski</option>
+      <option value="swiecie">Świecie - powiat</option>
+      <option value="torun">Toruń</option>
+      <option value="tuchola">Tuchola</option>
+      
+      <option value="wloclawek">Włocławek</option>
+      <option value="komendachoragwi">komenda chorągwi</option>
+      <option value="test">*test*</option>
+
+  </select>
+      </div>
+
+    <div class="wrap">  
+      <section>
+          <label class="form-label" for="participantsCtl" >LICZBA UCZESTNIKÓW</label>
+          <div class="number_input">
+            <input type="number" 
+              name="participants" 
+              id="participantsCtl" 
+              autocomplete="off" 
+              required
+              value="1"
+              min="1"
+              >
+              <button type="button" class="number_button"
+              onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
+            >&ndash;</button>
+              <button type="button" class="number_button number_button_last"
+              onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
+            >+</button>
+          </div>
+      </section>
+
+        <section id="activity_btns">
+            <input type="radio" class="btn-check" name="activity" value="walking" id="walkingCtl" autocomplete="off"
+                required>
+            <label class="btn" for="walkingCtl">Wędrówka</label>
+
+            <input type="radio" class="btn-check" name="activity" value="cycling" id="cyclingCtl"
+                autocomplete="off">
+            <label class="btn" for="cyclingCtl">Rower</label>
+
+            <input type="radio" class="btn-check" name="activity" value="swimming" id="swimmingCtl"
+                autocomplete="off">
+            <label class="btn btn-long" for="swimmingCtl">Sporty wodne</label>
+        </section>
+    </div>
+
+    <div>
+      <label for="distanceCtl" class="form-label">DYSTANS</label>
+      <input 
+        type="number" 
+        min="0"
+        class="key-input" 
+        name="distance" 
+        id="distanceCtl" 
+        autocomplete="off" 
+        required
+        placeholder="Wprowadź dystans w kilometrach"
+        >
+    </div>
+
+<div class="wrap">
+  <section>
+    <label for="imageCtl" class="form-label">ZDJĘCIE DYSTANSU</label>
+    <div id="imagePreviewSection">
+      <span class="flex_centered"> &nbsp; (przytnij wcześniej nieistotne brzegi - szybciej się zapisze)</span>
+
+      <input type="hidden" name="MAX_FILE_SIZE" value="8000000" />
+
+      <input type="file" class="file-input flex_centered" name="image" id="imageCtl" autocomplete="off" required
+        accept="image/png, image/jpeg, image/*">
+
+
+      <div id="imagePreview">
+        <img src="" alt="" class="image-preview__image">
+
+        <!-- <span class="image-preview__default-text">Podgląd zdjęcia</span> -->
+
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <button type="submit" name="btnSubmit" id="btnSubmit">
+      Wyślij
+  </button>
+  <p id="panelProgress" style="display: none;"> <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Trwa wysyłanie...</p>
+
+  </section>
+
+</div>
+    </form>
+    </main>
+    
+<footer id="footer">
+  <img src="img/st1.jpg" id="st1" alt="" />
+  <img src="img/st2.png" id="st2" alt="" />
+  <img src="img/st3.svg" id="st3" alt="" />
+</footer>
+
+    <script>
+      /* image preview taken from dcode channel  https://www.youtube.com/watch?v=VElnT8EoEEM */
+      const inpFile = document.getElementById("imageCtl");
+      const prewiewContainer = document.getElementById("imagePreview");
+      const previewImage = prewiewContainer.querySelector(".image-preview__image");
+      //const previewDefaultText = prewiewContainer.querySelector(".image-preview__default-text");
+
+      inpFile.addEventListener("change", function(){
+          const file = this.files[0];
+
+          if (file) {
+              const reader = new FileReader();
+              
+              //previewDefaultText.style.display = "none";
+              previewImage.style.display = "block";
+
+              reader.addEventListener("load", function(){
+                  previewImage.setAttribute("src", this.result);
+              });
+
+              reader.readAsDataURL(file);
+          } else {
+              //previewDefaultText.style.display = null;
+              previewImage.style.display = null;
+              previewImage.setAttribute("src", "");
+          }
+      });
+
+  </script>
+  </body>
+</html>

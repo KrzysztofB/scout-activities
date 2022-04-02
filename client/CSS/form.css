@@ -1,0 +1,388 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+body {
+  background-color: #393939;
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+body > * {
+  flex-shrink: 0;
+}
+footer {
+  flex-grow: 1;
+}
+#footer {
+  width: 100%;
+  min-height: 60px;
+  display: flex; 
+  justify-content: center;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+#background {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: -10;
+}
+
+#backgroung_photo {
+  position: absolute;
+  background-image: url(../img/backgroung-photo.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+}
+
+#backgroung_mask {
+  position: absolute;
+  background: rgb(35, 39, 64);
+  background: linear-gradient(
+    0deg,
+    rgba(35, 39, 64, 1) 35%,
+    rgba(25, 64, 147, 1) 100%
+  );
+  height: 100%;
+  width: 100%;
+  opacity: 80%;
+}
+
+.circle {
+  position: absolute;
+}
+
+#img_cover {
+  width: 60%;
+  bottom: 0px;
+  margin-top: 16px;
+  /* margin: auto; */
+  /* margin-left: auto;
+  margin-right: 10px; */
+  z-index: -5;
+}
+
+
+#st1 {
+  width: 40%;
+}
+
+#st2 {
+  margin-left: 20px;
+  width: 10%;
+}
+
+#st3 {
+  margin-left: 20px;
+  width: 15%;
+}
+
+/* Przycisk */
+#btn-1 {
+  display: block;
+  position: relative;
+  width: 15%;
+  min-width: 240px;
+  height: 40px;
+  top: 35px;
+  border: none;
+  border-radius: 60px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  color: #ffff;
+  cursor: pointer;
+  font-weight: bold;
+  background-image: linear-gradient(to right, #3e64ff, #a10000, #3e64ff);
+  background-size: 200%;
+  transition: 0.5s;
+  text-decoration: none;
+  left: 3%;
+}
+
+#btn-1:hover {
+  background-position: right;
+}
+
+
+.text {
+  left: 80%;
+}
+
+
+.members {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  padding-top: 6%;
+  padding-bottom: 10px;
+  margin-left: 44.5%;
+}
+
+.members span {
+  font-size: 15px;
+  position: absolute;
+  color: black;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+
+#form_acticities {
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+  align-items: flex-start;
+  color: black;
+  margin-left: auto;
+  margin-right: 10px;
+}
+
+#form_acticities > div {
+  width: 100%;
+}
+
+.form-label {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  display: block;
+  padding-left: 25px;
+  background-color: white;
+  opacity: 86%;
+  border-radius: 50px;
+
+
+}
+
+.key-input, .number_input{
+  padding: 10px 25px;
+  border-radius: 50px;
+  margin-top: 1%;
+  box-shadow: 5px 5px rgb(241, 241, 241);
+  width: 100%;
+}
+
+.file-input {
+  padding: 10px 10px;
+  margin-top: 1%;
+  width: 100%;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center; */
+}
+
+.number_input {
+  border: 1px solid rgb(0, 0, 0);
+  display: flex;
+  flex-direction:row;
+  justify-content: space-between;
+  padding:0px 0px 0px 25px;
+}
+.number_input input {
+  border:none;
+  font-family: sans-serif;
+  font-size: 1.5rem;
+  height: 2.3rem;
+  flex-basis: 100%;
+  min-width: 50px;
+}
+
+
+.number_input .number_button {
+  outline: none;
+  -webkit-appearance: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: gray;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 32px;
+  font-weight: bold;
+
+  color: #ffff;
+  border:none;
+  border-left: 1px solid white;
+  width: 3rem;
+  height: 38px;
+  cursor: pointer;
+}
+
+.number_input .number_button_last{
+  border-top-right-radius: 43%;
+  border-bottom-right-radius: 43%;
+}
+
+input:focus {
+  /* removing the input focus blue box. Put this on the form if you like. */
+  outline: none;
+}
+.mainwrap {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  column-gap: 16px;
+  row-gap: 24px;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+aside {
+  
+  display: flex;
+  flex-direction: column;
+  
+  align-items: center;
+  justify-content: center;
+}
+.mainwrap aside {
+  flex: 1 1 auto;
+  max-width: 860px;
+  min-width: 300;
+  flex-basis: 300;
+}
+
+.mainwrap form {
+  flex: 1 1 auto;
+  min-width: 400px;
+  flex-basis: 400px;
+  max-width: 800px;
+}
+
+.wrap {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  column-gap: 16px;
+  row-gap: 24px;
+  align-items: center
+}
+.wrap section {
+  flex: 1 0 auto;
+  max-width: 100%;
+}
+
+
+#activity_btns{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-between;
+  max-width: 230px;
+  height: 88px;
+}
+
+.btn-check {
+  position: absolute;
+  clip: rect(0,0,0,0);
+  pointer-events: none;
+}
+
+.btn-check:active+.btn, .btn-check:checked+.btn, .btn:active {
+  background-color: #808080;
+  color: white;
+}
+
+.btn, input[type=file]::file-selector-button {
+  display: flex;
+  user-select: none;
+  cursor: pointer;
+  width: 110px;
+  height: 40px;
+  background-color: #fff;
+
+  border: 1px solid black;
+  border-radius: 50px;
+  box-shadow: 5px 5px rgb(241 241 241);
+  /* font-family: "Calibri"; */
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  text-transform: uppercase;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-long {
+  width: 230px;
+}
+
+#imagePreviewSection{
+  min-width: 360px;
+  min-height: 100px;
+  margin-top: 1%;
+
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 10px;
+  background-color: #e2e2e2;
+  box-shadow: 5px 5px rgb(241, 241, 241);
+
+  /* Default text */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: flex-start;
+  color: black;
+}
+
+
+.image-preview__image {
+  max-width: 100%;
+        max-height: 100%;
+        display: block; 
+}
+
+#btnSubmit {
+  /* justify-self: center; */
+  min-width: 200px;
+  height: 60px;
+  border: none;
+  border-radius: 60px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 25px;
+  color: #ffff;
+  cursor: pointer;
+  font-weight: bold;
+  background-image: linear-gradient(to right, #3e64ff, #a10000, #3e64ff);
+  background-size: 200%;
+  transition: 0.5s;
+  text-decoration: none;
+  box-shadow: 5px 5px rgb(241, 241, 241);
+}
+
+input[type=file]::file-selector-button {
+  width: 200px;
+  margin: auto;
+}
+
+@media (max-width: 720px), (orientation: portrait) {
+  .mainwrap {
+    flex-wrap: wrap;
+  }
+  #form_acticities{
+    margin-right: auto;
+  }
+}

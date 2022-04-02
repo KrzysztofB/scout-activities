@@ -90,7 +90,7 @@ $fields = [
     'scoutunit' => 'string',
     'participants' => 'intvalidate',
     'activity' => 'string',
-    'distance' => 'intvalidate',
+    'distance' => 'float',//'intvalidate',
     'image' => 'string',
     'notes' => 'string'
 ];
@@ -199,7 +199,7 @@ try {
     $mail->Port       = $kopernik_config['service_smtp_port'];          //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
     //Recipients
-    $mail->setFrom($mail_from, 'Na orbbitach');
+    $mail->setFrom($mail_from, 'Na orbitach');
     $mail->addAddress($mail_to);                                        //Add a recipient
     //$mail->addAddress('ellen@example.com');                           //Name is optional
     $mail->addReplyTo($mail_from);

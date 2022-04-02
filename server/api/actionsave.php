@@ -25,7 +25,7 @@ function save_action(\mysqli $mysqli, array $data)
 {
     $stmt = $mysqli->prepare("INSERT INTO activities (scoutunit, activity, participants, distance, image_name_new) " .
                                                 "VALUES (?, ?, ?, ?, ?)");
-    $stmt->bind_param("ssiis", $data['scoutunit'], $data['activity'], $data['participants'], $data['distance'], $data['image']);
+    $stmt->bind_param("ssiis", $data['scoutunit'], $data['activity'], $data['participants'], intval(1000 * $data['distance']), $data['image']);
     $stmt->execute();
     $stmt->close();
     if($mysqli->error)
