@@ -355,7 +355,7 @@ aside {
         display: block; 
 }
 
-#btnSubmit {
+#btnSubmit, #btnSending {
   /* justify-self: center; */
   min-width: 200px;
   height: 60px;

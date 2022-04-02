@@ -21,11 +21,11 @@
       function sendingIndicator(){
           const btnSubmit = document.getElementById("btnSubmit");
           btnSubmit.style.display = "none";
-          const panelProgress = document.getElementById("panelProgress");
-          panelProgress.style.display = "block";
+          const sendingIndicator = document.getElementById("btnSending");
+          sendingIndicator.style.display = "block";
           return true; 
       }
-  </script>
+    </script>
 
     <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
@@ -141,6 +141,7 @@
       <input 
         type="number" 
         min="0"
+        step="0.1"
         class="key-input" 
         name="distance" 
         id="distanceCtl" 
@@ -174,8 +175,10 @@
   <section>
     <button type="submit" name="btnSubmit" id="btnSubmit">
       Wyślij
-  </button>
-  <p id="panelProgress" style="display: none;"> <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Trwa wysyłanie...</p>
+    </button>
+    <button type="button" style="display: none;"  id="btnSending">
+      Trwa wysyłanie...
+    </button>
 
   </section>
 

@@ -58,8 +58,11 @@ a {
 #logo {
   position: absolute;
   width: 35%;
+  min-width: 200px;
   left: 50%;
   top: 10%;
+  background-color: rgba(255,255,255,0.6);
+  border-radius: 60px;
 }
 
 #btn-1 {
@@ -340,5 +343,12 @@ a {
   .mobile_ellipse {
     position: absolute;
     z-index: 2;
+  }
+}
+
+
+@media (max-width: 780px), (orientation: portrait) {
+  #logo {
+    left: 5%;
   }
 }

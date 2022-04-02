@@ -87,7 +87,7 @@
             x: d => d.totalKm,
             y: d => d.unitname,
             yDomain: d3.groupSort(dataWithTotalKm, ([d]) => -d.totalKm, d => d.unitname), // sort by descending totalKm
-            xFormat: ".2f",
+            xFormat: ".1f",
             xLabel: "Dystans[km] →",
             marginLeft: 184
         })

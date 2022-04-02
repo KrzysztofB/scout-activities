@@ -96,9 +96,9 @@ function BarChart(data, {
         .attr("x", i => xScale(X[i]))
         .attr("y", i => yScale(Y[i]) + yScale.bandwidth() / 2)
         .attr("dy", "0.35em")
-        .attr("dx", 2) //attr("dx", -4)
+        .attr("dx", -2) //attr("dx", -4)
         .text(title)
-        .call(text => text.filter(i => xScale(X[i]) - xScale(0) < 20) // short bars
+        .call(text => text.filter(i => xScale(X[i]) - xScale(0) < 30) // short bars <20
             .attr("dx", +4)
             .attr("fill", titleAltColor)
             .attr("text-anchor", "start"));
