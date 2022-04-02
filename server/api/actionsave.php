@@ -39,7 +39,7 @@ function save_action(\mysqli $mysqli, array $data)
 
 function read_total(\mysqli $mysqli)
 {
-    $query = "SELECT scoutunit, walking, running, cycling, swimming, updated_at" .
+    $query = "SELECT scoutunit, walking, running, cycling, swimming, updated_at, unitname" .
         " from totals";
     $mysqli->query($query);
 

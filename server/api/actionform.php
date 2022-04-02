@@ -38,7 +38,7 @@ function prepare_new_name($old_name){
 
 $uploaded_image = $_FILES['image']['tmp_name'];
 $uploaded_image_name_old = basename($_FILES["image"]["name"]);
-$uploaded_image_name_new = prepare_new_name($uploaded_image_name_old);
+$uploaded_image_name_new = $_POST['scoutunit'] . '_' . prepare_new_name($uploaded_image_name_old);
 $uploaded_image_size = $_FILES['image']['size'];
 // extra checks https://www.php.net/manual/en/features.file-upload.php
 
@@ -59,7 +59,7 @@ function redirect_to_index()
 function redirect_to_result()
 {   
     cleanup();
-    header('Location: ../result.html');
+    header('Location: ../results.html');
 }
 
 function clean_field($input)
