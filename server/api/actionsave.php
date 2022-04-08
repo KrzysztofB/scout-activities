@@ -23,9 +23,11 @@ function kopernik_mysqli(array $kopernik_config, bool $full_debug)
 
 function save_action(\mysqli $mysqli, array $data)
 {
+    $distance_in_meters = intval(1000 * $data['distance']);
+
     $stmt = $mysqli->prepare("INSERT INTO activities (scoutunit, activity, participants, distance, image_name_new) " .
                                                 "VALUES (?, ?, ?, ?, ?)");
-    $stmt->bind_param("ssiis", $data['scoutunit'], $data['activity'], $data['participants'], intval(1000 * $data['distance']), $data['image']);
+    $stmt->bind_param("ssiis", $data['scoutunit'], $data['activity'], $data['participants'], $distance_in_meters, $data['image']);
     $stmt->execute();
     $stmt->close();
     if($mysqli->error)
